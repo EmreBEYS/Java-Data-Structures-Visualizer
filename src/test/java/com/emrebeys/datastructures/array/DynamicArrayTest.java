@@ -1,99 +1,139 @@
 package com.emrebeys.datastructures.array;
 
 import com.emrebeys.datastructures.array.DynamicArray;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DynamicArrayTest {
 
-    @Test
-    void shouldAddElements() {
+    private DynamicArray<Integer> dynamicArray;
 
-        DynamicArray<Integer> array = new DynamicArray<>();
-
-        array.add(10);
-        array.add(20);
-
-        assertEquals(2, array.size());
-        assertEquals(10, array.get(0));
-        assertEquals(20, array.get(1));
+    @BeforeEach
+    void setUp() {
+        dynamicArray = new DynamicArray<>();
     }
 
     @Test
-    void shouldInsertElementAtIndex() {
-
-        DynamicArray<Integer> array = new DynamicArray<>();
-
-        array.add(10);
-        array.add(30);
-
-        array.add(1,20);
-
-        assertEquals(3,array.size());
-        assertEquals(20,array.get(1));
+    void shouldStartEmpty() {
+        assertTrue(dynamicArray.isEmpty());
+        assertEquals(0, dynamicArray.size());
     }
 
     @Test
-    void shouldRemoveElement() {
+    void shouldAddElement() {
+        dynamicArray.add(10);
 
-        DynamicArray<Integer> array = new DynamicArray<>();
-
-        array.add(10);
-        array.add(20);
-        array.add(30);
-
-        Integer removed=array.remove(1);
-
-        assertEquals(20,removed);
-        assertEquals(2,array.size());
-        assertEquals(30,array.get(1));
+        assertEquals(1, dynamicArray.size());
+        assertEquals(10, dynamicArray.get(0));
     }
 
     @Test
-    void shouldReplaceElement() {
+    void shouldAddMultipleElements() {
+        dynamicArray.add(10);
+        dynamicArray.add(20);
+        dynamicArray.add(30);
 
-        DynamicArray<String> array=new DynamicArray<>();
-
-        array.add("Java");
-
-        array.set(0,"Python");
-
-        assertEquals("Python",array.get(0));
+        assertEquals(3, dynamicArray.size());
+        assertEquals(10, dynamicArray.get(0));
+        assertEquals(20, dynamicArray.get(1));
+        assertEquals(30, dynamicArray.get(2));
     }
 
     @Test
-    void shouldClearArray() {
+    void shouldResizeWhenCapacityIsExceeded() {
+        for (int i = 0; i < 20; i++) {
+            dynamicArray.add(i);
+        }
 
-        DynamicArray<Integer> array=new DynamicArray<>();
+        assertEquals(20, dynamicArray.size());
 
-        array.add(1);
-        array.add(2);
-
-        array.clear();
-
-        assertTrue(array.isEmpty());
-        assertEquals(0,array.size());
+        for (int i = 0; i < 20; i++) {
+            assertEquals(i, dynamicArray.get(i));
+        }
     }
 
     @Test
-    void shouldContainElement() {
+    void shouldSetElementAtGivenIndex() {
+        dynamicArray.add(10);
+        dynamicArray.add(20);
 
-        DynamicArray<String> array=new DynamicArray<>();
+        dynamicArray.set(1, 99);
 
-        array.add("Tree");
-
-        assertTrue(array.contains("Tree"));
-        assertFalse(array.contains("Graph"));
+        assertEquals(99, dynamicArray.get(1));
+        assertEquals(2, dynamicArray.size());
     }
 
     @Test
-    void shouldThrowExceptionForInvalidIndex() {
+    void shouldRemoveElementByIndex() {
+        dynamicArray.add(10);
+        dynamicArray.add(20);
+        dynamicArray.add(30);
 
-        DynamicArray<Integer> array=new DynamicArray<>();
+        Integer removedElement = dynamicArray.remove(1);
 
-        assertThrows(IndexOutOfBoundsException.class,
-                ()->array.get(5));
+        assertEquals(20, removedElement);
+        assertEquals(2, dynamicArray.size());
+        assertEquals(10, dynamicArray.get(0));
+        assertEquals(30, dynamicArray.get(1));
     }
 
+    @Test
+    void shouldReturnTrueWhenElementExists() {
+        dynamicArray.add(10);
+        dynamicArray.add(20);
+
+        assertTrue(dynamicArray.contains(20));
+    }
+
+    @Test
+    void shouldReturnFalseWhenElementDoesNotExist() {
+        dynamicArray.add(10);
+
+        assertFalse(dynamicArray.contains(99));
+    }
+
+    @Test
+    void shouldReturnCorrectIndexOfElement() {
+        dynamicArray.add(10);
+        dynamicArray.add(20);
+        dynamicArray.add(30);
+
+        assertEquals(1, dynamicArray.indexOf(20));
+    }
+
+    @Test
+    void shouldReturnMinusOneWhenElementDoesNotExist() {
+        dynamicArray.add(10);
+
+        assertEquals(-1, dynamicArray.indexOf(99));
+    }
+
+    @Test
+    void shouldClearAllElements() {
+        dynamicArray.add(10);
+        dynamicArray.add(20);
+
+        dynamicArray.clear();
+
+        assertTrue(dynamicArray.isEmpty());
+        assertEquals(0, dynamicArray.size());
+    }
+
+    @Test
+    void shouldThrowExceptionWhenGettingInvalidIndex() {
+        assertThrows(
+                IndexOutOfBoundsException.class,
+                () -> dynamicArray.get(0)
+        );
+    }
+
+    @Test
+    void shouldThrowExceptionWhenRemovingInvalidIndex() {
+        assertThrows(
+                IndexOutOfBoundsException.class,
+                () -> dynamicArray.remove(0)
+        );
+    }
 }

@@ -1,16 +1,47 @@
 # Array (Dizi)
 
-## Amaç
-
-Bu doküman, dizi (Array) veri yapısının çalışma mantığını, zaman karmaşıklıklarını ve bu projede geliştirilen DynamicArray implementasyonunu açıklamak amacıyla hazırlanmıştır.
+Bu doküman, Array (Dizi) veri yapısının çalışma mantığını, bellek davranışını, zaman karmaşıklıklarını ve bu proje kapsamında geliştirilen **DynamicArray** implementasyonunu açıklamak amacıyla hazırlanmıştır.
 
 ---
 
-# Array Nedir?
+# 📑 İçindekiler
 
-Array (Dizi), aynı veri tipindeki elemanları bellekte ardışık (contiguous) olarak saklayan temel veri yapılarından biridir.
+- Amaç
+- Array Nedir?
+- Bellekte Nasıl Çalışır?
+- Avantajları
+- Dezavantajları
+- Dynamic Array Nedir?
+- DynamicArray Implementasyonu
+- Bellek Yapısı
+- Resize (Kapasite Artırma) Mekanizması
+- Zaman Karmaşıklıkları
+- Alan Karmaşıklığı
+- Kullanım Örneği
+- Test Kapsamı
+- Proje Yapısı
+- Gerçek Hayattan Örnek
+- Sonuç
 
-Her elemanın bellekte belirli bir adresi bulunduğu için istenilen elemana indeks numarası ile doğrudan erişilebilir.
+---
+
+# 🎯 Amaç
+
+Bu dokümanın amacı;
+
+- Array veri yapısının temel mantığını açıklamak
+- Bellekte nasıl çalıştığını göstermek
+- Dynamic Array algoritmasını anlatmak
+- Bu projedeki Java implementasyonunu belgelemek
+- Zaman ve alan karmaşıklıklarını incelemektir.
+
+---
+
+# 📚 Array Nedir?
+
+Array (Dizi), aynı veri tipindeki elemanları bellekte **ardışık (Contiguous Memory)** olarak saklayan temel veri yapılarından biridir.
+
+Her elemanın bellekte sabit bir konumu bulunduğu için istenilen elemana doğrudan indeks numarası ile erişilebilir.
 
 Örnek:
 
@@ -26,18 +57,18 @@ Her elemanın bellekte belirli bir adresi bulunduğu için istenilen elemana ind
 
 Burada;
 
-- 10 → index 0
-- 20 → index 1
-- 30 → index 2
-- 40 → index 3
+- 10 → Index 0
+- 20 → Index 1
+- 30 → Index 2
+- 40 → Index 3
 
-şeklinde tutulur.
+şeklinde tutulmaktadır.
 
 ---
 
-# Bellekte Nasıl Çalışır?
+# 💾 Bellekte Nasıl Çalışır?
 
-Array elemanları bellekte yan yana tutulur.
+Array elemanları bellekte ardışık adreslerde tutulur.
 
 ```
 Adres
@@ -48,9 +79,9 @@ Adres
 1012
 ```
 
-Bu yapı sayesinde;
+Örneğin;
 
-```
+```java
 array[2]
 ```
 
@@ -62,31 +93,34 @@ Bu nedenle erişim süresi
 O(1)
 ```
 
-olur.
+karmaşıklığındadır.
+
+Bu özellik Array veri yapısını oldukça hızlı hale getirir.
 
 ---
 
-# Avantajları
+# ✅ Avantajları
 
-- Çok hızlı erişim sağlar.
-- Bellekte düzenli tutulur.
-- CPU Cache açısından oldukça verimlidir.
-- Uygulaması oldukça basittir.
-
----
-
-# Dezavantajları
-
-- Boyutu sabittir.
-- Araya eleman eklemek maliyetlidir.
-- Eleman silmek maliyetlidir.
-- Büyük dizilerde yeniden oluşturma gerekebilir.
+- Çok hızlı rastgele erişim (Random Access)
+- CPU Cache dostudur
+- Bellekte düzenli saklanır
+- Basit implementasyona sahiptir
+- Okuma işlemleri oldukça hızlıdır
 
 ---
 
-# Dynamic Array Nedir?
+# ❌ Dezavantajları
 
-Java'daki ArrayList gibi yapılar aslında Dynamic Array mantığı ile çalışır.
+- Boyutu sabittir
+- Araya eleman eklemek maliyetlidir
+- Eleman silmek maliyetlidir
+- Büyük diziler yeniden oluşturulmak zorundadır
+
+---
+
+# 🚀 Dynamic Array Nedir?
+
+Java'daki **ArrayList**, C++'taki **vector** ve Python'daki **list** veri yapıları aslında Dynamic Array mantığı ile çalışmaktadır.
 
 Başlangıçta belirli bir kapasite oluşturulur.
 
@@ -96,7 +130,7 @@ Başlangıçta belirli bir kapasite oluşturulur.
 Capacity = 2
 
 +----+----+
-| 10 | 20 |
+|10  |20  |
 +----+----+
 ```
 
@@ -108,7 +142,7 @@ Yeni eleman geldiğinde;
 
 eklenemez.
 
-Yeni bir dizi oluşturulur.
+Bu durumda yeni ve daha büyük bir dizi oluşturulur.
 
 ```
 Capacity = 4
@@ -118,13 +152,13 @@ Capacity = 4
 +----+----+----+----+
 ```
 
-Eski elemanlar yeni diziye kopyalanır.
+Eski dizideki elemanlar yeni diziye kopyalanır.
 
 ---
 
-# Bu Projede Geliştirilen DynamicArray
+# ⚙️ Bu Projede Geliştirilen DynamicArray
 
-Bu proje kapsamında Java kullanılarak Generic bir Dynamic Array geliştirilmiştir.
+Bu proje kapsamında Java kullanılarak tamamen sıfırdan Generic bir Dynamic Array geliştirilmiştir.
 
 Desteklenen işlemler;
 
@@ -141,33 +175,149 @@ Desteklenen işlemler;
 
 ---
 
-# Zaman Karmaşıklıkları
+# 🧠 Bellek Yapısı
 
-| İşlem | Karmaşıklık |
-|-------|-------------|
-| get() | O(1) |
-| set() | O(1) |
-| add() | Ortalama O(1) |
-| add(index) | O(n) |
-| remove() | O(n) |
-| contains() | O(n) |
-| indexOf() | O(n) |
+Örnek DynamicArray görünümü
+
+```
+Capacity = 8
+
++----+----+----+----+----+----+----+----+
+|10  |20  |30  |40  |    |    |    |    |
++----+----+----+----+----+----+----+----+
+
+Size = 4
+Capacity = 8
+```
 
 ---
 
-# Alan Karmaşıklığı
+# 🔄 Resize (Kapasite Artırma) Mekanizması
 
-Array veri yapısı
+Dizi dolduğunda kapasite otomatik olarak artırılır.
+
+```
+Eski Kapasite
+
+Capacity = 4
+
++----+----+----+----+
+|10  |20  |30  |40  |
++----+----+----+----+
+
+↓
+
+Yeni Kapasite
+
+Capacity = 8
+
++----+----+----+----+----+----+----+----+
+|10  |20  |30  |40  |50  |    |    |    |
++----+----+----+----+----+----+----+----+
+```
+
+Temel algoritma
+
+```java
+if(size == capacity){
+    resize(capacity * 2);
+}
+```
+
+Bu yöntem sayesinde ekleme işlemleri ortalama olarak oldukça hızlı gerçekleşmektedir.
+
+---
+
+# 📊 Zaman Karmaşıklıkları
+
+| İşlem | En İyi | Ortalama | En Kötü |
+|-------|:------:|:--------:|:--------:|
+| get() | O(1) | O(1) | O(1) |
+| set() | O(1) | O(1) | O(1) |
+| add() | O(1) | O(1) (Amortized) | O(n) |
+| add(index) | O(n) | O(n) | O(n) |
+| remove() | O(1)* | O(n) | O(n) |
+| contains() | O(1)* | O(n) | O(n) |
+| indexOf() | O(1)* | O(n) | O(n) |
+
+> *En iyi durum; ilk elemanın bulunması veya son elemanın silinmesi gibi özel senaryolardır.
+
+---
+
+# 📦 Alan Karmaşıklığı
+
+Dynamic Array
 
 ```
 O(n)
 ```
 
-alan kullanır.
+alan kullanmaktadır.
 
 ---
 
-# Gerçek Hayattan Örnek
+# 💻 Kullanım Örneği
+
+```java
+DynamicArray<Integer> numbers = new DynamicArray<>();
+
+numbers.add(10);
+numbers.add(20);
+numbers.add(30);
+
+System.out.println(numbers.get(1));
+
+numbers.remove(0);
+```
+
+---
+
+# 🧪 Test Coverage
+
+DynamicArray implementasyonu aşağıdaki senaryolar için **JUnit 5** kullanılarak test edilmiştir.
+
+- ✅ Empty Array
+- ✅ Add Element
+- ✅ Multiple Add
+- ✅ Automatic Resize
+- ✅ Remove
+- ✅ Set
+- ✅ Contains
+- ✅ IndexOf
+- ✅ Clear
+- ✅ Invalid Index Exception
+- ✅ Boundary Tests
+- ✅ Size Control
+- ✅ Generic Type Support
+
+Toplam **13 başarılı test** bulunmaktadır.
+
+---
+
+# 📁 Proje Yapısı
+
+```
+src
+├── main
+│   └── java
+│       └── com
+│           └── emrebeys
+│               └── datastructures
+│                   └── array
+│                       └── DynamicArray.java
+│
+└── test
+    └── java
+        └── com
+            └── emrebeys
+                └── datastructures
+                    └── array
+                        └── DynamicArrayTest.java
+```
+
+---
+
+# 🎬 Gerçek Hayattan Örnek
 
 Bir sinema salonundaki koltuklar;
 
@@ -188,12 +338,33 @@ Bir sinema salonundaki koltuklar;
 
 Doğrudan ilgili koltuğa gidilir.
 
-Array mantığı da aynı şekilde çalışır.
+Array veri yapısı da aynı mantıkla çalışmaktadır.
 
 ---
 
-# Sonuç
+# 🎓 Sonuç
 
 Array, bilgisayar bilimlerinin en temel veri yapılarından biridir.
 
-Bu projede geliştirilen DynamicArray sınıfı sayesinde dizilerin çalışma mantığı sıfırdan uygulanmış, otomatik kapasite artırma mekanizması ve temel veri yapısı işlemleri Java ile gerçekleştirilmiştir.
+Bu proje kapsamında geliştirilen **DynamicArray**, Java'nın hazır koleksiyonlarını kullanmadan tamamen sıfırdan geliştirilmiştir.
+
+Bu implementasyon sayesinde;
+
+- Generic Programlama
+- Bellek Yönetimi
+- Dynamic Resize Algoritması
+- Big-O Analizi
+- Temiz Kod Prensipleri
+- JUnit ile Test Geliştirme
+
+konuları uygulamalı olarak gösterilmiştir.
+
+---
+
+# ✅ Status
+
+- DynamicArray Implementation ✔️
+- JUnit Tests ✔️
+- Documentation ✔️
+
+**Version:** 0.1.0
