@@ -132,9 +132,9 @@ java-data-structures-lab
 | Circular Doubly Linked List | ✅ |
 | Skip List | ✅ |
 | Unrolled Linked List | ✅ |
-| Stack | ⏳ |
-| Queue | ⏳ |
-| Circular Queue | ⏳ |
+| Stack | ✅ |
+| Queue | ✅ |
+| Circular Queue | ✅ |
 | Binary Search Tree | ⏳ |
 | AVL Tree | ⏳ |
 | Heap | ⏳ |
@@ -682,17 +682,25 @@ The main goals of this project are:
 
 ## Version 0.3.0 — Stack & Queue
 
-- [ ] Stack
-- [ ] Stack Demo
-- [ ] Stack Unit Tests
-- [ ] Queue
-- [ ] Circular Queue
-- [ ] Queue Demo
-- [ ] Queue Unit Tests
-- [ ] Documentation
+- [x] Stack
+- [x] Stack Demo
+- [x] Stack Unit Tests
+- [x] Queue
+- [x] Circular Queue
+- [x] Queue Demo
+- [x] Circular Queue Demo
+- [x] Queue Unit Tests
+- [x] Circular Queue Unit Tests
+- [x] Documentation
 
-**Status:** Planned ⏳
+**Status:** Completed ✅
+Currently completed:
 
+**Array Module:** Completed ✅  
+**Linked List Family:** Completed ✅  
+**Stack Module:** Completed ✅  
+**Queue Family:** Completed ✅  
+**Next Module:** Trees ⏳
 ---
 
 ## Version 0.4.0 — Trees
@@ -748,8 +756,8 @@ Linked List
 ├── Skip List                         ✅
 └── Unrolled Linked List              ✅
 
-Stack                                   ⏳
-Queue                                   ⏳
+Stack                                   ✅
+Queue                                   ✅
 Tree                                    ⏳
 Heap                                    ⏳
 Hash Map                                ⏳
@@ -759,7 +767,7 @@ Graph                                   ⏳
 Current development version:
 
 ```text
-Version 0.2.0
+Version 0.3.0
 ```
 
 ---
