@@ -1,45 +1,326 @@
-# Java Data Structures Lab
+# Java Data Structures Visualizer
 
-> A comprehensive Java project for learning, implementing and analyzing fundamental data structures from scratch.
+An educational project focused on implementing, testing, and documenting fundamental and advanced data structures from scratch in Java.
 
----
-
-## 📖 About The Project
-
-**Java Data Structures Lab** is an educational project that implements fundamental data structures from scratch using **Java 21**.
-
-The purpose of this repository is not only to provide working implementations but also to explain how each data structure works, its advantages, disadvantages, memory behavior, and time complexity.
-
-Each data structure includes:
-
-- 📚 Theoretical documentation
-- 💻 Java implementation
-- 🧪 Unit tests
-- ▶️ Interactive console demonstrations
-- 📊 Time & Space complexity analysis
-- 📝 Detailed documentation
+Instead of only relying on the Java Collections Framework, this project aims to explore the **internal logic**, algorithms, and time complexities behind common data structures through hands-on implementations.
 
 ---
 
-## 🚀 Technologies
+## Project Goals
 
-- Java 21
-- Maven
-- JUnit 5
-- IntelliJ IDEA
+- Implement data structures from scratch
+- Understand how core algorithms work internally
+- Improve Java and OOP skills
+- Write automated tests with JUnit
+- Validate edge-case scenarios
+- Strengthen algorithmic thinking
+- Document each data structure clearly
+- Expand the project with a visualization layer in later stages
 
 ---
 
-# 📂 Project Structure
+## Technologies Used
 
 ```text
-java-data-structures-lab
-│
-├── docs
-│   ├── 01-array.md
-│   └── 02-linked-list.md
-│
-├── images
+Java 21
+Maven
+JUnit 5
+IntelliJ IDEA
+Git
+GitHub
+```
+
+---
+
+# Project Status
+
+| Section | Data Structure | Status |
+|---|---|---|
+| 01 | Array | ✅ Completed |
+| 02 | Linked List Family | ✅ Completed |
+| 03 | Stack | ✅ Completed |
+| 04 | Queue | ✅ Completed |
+| 05 | Tree | ✅ Completed |
+| 06 | Heap | ✅ Completed |
+| 07 | Hash Map | ⏳ Next |
+| 08 | Graph | ⏳ Planned |
+
+---
+
+# Implemented Data Structures
+
+## 01 - Array
+
+A dynamic array implementation was developed from scratch.
+
+```text
+Array
+└── Dynamic Array
+```
+
+Main topics:
+
+- Dynamic capacity
+- Automatic resizing
+- Insert
+- Remove
+- Get / Set
+- Search
+- Size management
+
+Detailed documentation:
+
+```text
+docs/01-array.md
+```
+
+---
+
+## 02 - Linked List Family
+
+Different types of linked lists were implemented.
+
+```text
+Linked List
+├── Singly Linked List
+├── Doubly Linked List
+├── Circular Singly Linked List
+├── Circular Doubly Linked List
+├── Skip List
+└── Unrolled Linked List
+```
+
+This section covers:
+
+- Node-based data organization
+- Forward and backward links
+- Circular references
+- Skip-level logic
+- Block-based linked list design
+- Insert / remove / search
+- Traversal
+
+Detailed documentation:
+
+```text
+docs/02-Linked-list.md
+```
+
+---
+
+## 03 - Stack
+
+A Stack data structure based on the LIFO principle was implemented.
+
+```text
+Last In
+First Out
+```
+
+Main operations:
+
+```text
+push
+pop
+peek
+size
+isEmpty
+clear
+```
+
+The implementation was verified with demo scenarios and JUnit tests.
+
+Detailed documentation:
+
+```text
+docs/03-stack.md
+```
+
+---
+
+## 04 - Queue
+
+Queue structures based on the FIFO principle were implemented.
+
+```text
+First In
+First Out
+```
+
+Implemented structures:
+
+```text
+Queue
+├── Queue
+└── Circular Queue
+```
+
+Main topics:
+
+- Enqueue
+- Dequeue
+- Peek
+- Circular indexing
+- Overflow / underflow checks
+- Size management
+
+Detailed documentation:
+
+```text
+docs/04-queue.md
+```
+
+---
+
+## 05 - Tree
+
+The Tree section contains two important search tree implementations.
+
+```text
+Tree
+├── Binary Search Tree
+└── AVL Tree
+```
+
+### Binary Search Tree
+
+Implemented features:
+
+- Insert
+- Search
+- Delete
+- Minimum
+- Maximum
+- Inorder Traversal
+- Preorder Traversal
+- Postorder Traversal
+- Duplicate prevention
+- Clear
+
+JUnit tests:
+
+```text
+16 Tests
+```
+
+### AVL Tree
+
+The AVL Tree implementation introduces self-balancing tree behavior.
+
+```text
+AVL Tree
+├── Height
+├── Balance Factor
+├── LL Rotation
+├── RR Rotation
+├── LR Rotation
+└── RL Rotation
+```
+
+Additional features:
+
+- Rebalancing after insertion
+- Rebalancing after deletion
+- Search
+- Min / Max
+- Traversal
+- Height validation
+
+JUnit tests:
+
+```text
+23 Tests
+```
+
+Total Tree tests:
+
+```text
+39 Tests
+```
+
+Detailed documentation:
+
+```text
+docs/05-tree.md
+```
+
+---
+
+## 06 - Heap
+
+The Heap section includes Min Heap and Max Heap implementations.
+
+```text
+Heap
+├── Min Heap
+└── Max Heap
+```
+
+### Min Heap
+
+Rule:
+
+```text
+Parent <= Children
+```
+
+Main operations:
+
+- Insert
+- Peek
+- Extract Min
+- Heapify Up
+- Heapify Down
+- Contains
+- Clear
+
+### Max Heap
+
+Rule:
+
+```text
+Parent >= Children
+```
+
+Main operations:
+
+- Insert
+- Peek
+- Extract Max
+- Heapify Up
+- Heapify Down
+- Contains
+- Clear
+
+The heap implementations are based on `ArrayList<Integer>`.
+
+Index relationships:
+
+```text
+Parent      = (index - 1) / 2
+Left Child  = (2 * index) + 1
+Right Child = (2 * index) + 2
+```
+
+JUnit test classes:
+
+```text
+MinHeapTest -> 13 Tests
+MaxHeapTest -> 13 Tests
+```
+
+Detailed documentation:
+
+```text
+docs/06-heap.md
+```
+
+---
+
+# Project Structure
+
+```text
+Java-Data-Structures-Visualizer
 │
 ├── src
 │   ├── main
@@ -48,45 +329,11 @@ java-data-structures-lab
 │   │           └── emrebeys
 │   │               └── datastructures
 │   │                   ├── array
-│   │                   │   └── DynamicArray.java
-│   │                   │
 │   │                   ├── linkedlist
-│   │                   │   ├── singly
-│   │                   │   │   ├── LinkedList.java
-│   │                   │   │   ├── LinkedListDemo.java
-│   │                   │   │   └── Node.java
-│   │                   │   │
-│   │                   │   ├── doubly
-│   │                   │   │   ├── DoublyLinkedList.java
-│   │                   │   │   ├── DoublyLinkedListDemo.java
-│   │                   │   │   └── DoublyNode.java
-│   │                   │   │
-│   │                   │   ├── circularsingly
-│   │                   │   │   ├── CircularSinglyLinkedList.java
-│   │                   │   │   ├── CircularSinglyLinkedListDemo.java
-│   │                   │   │   └── CircularSinglyNode.java
-│   │                   │   │
-│   │                   │   ├── circulardoubly
-│   │                   │   │   ├── CircularDoublyLinkedList.java
-│   │                   │   │   ├── CircularDoublyLinkedListDemo.java
-│   │                   │   │   └── CircularDoublyNode.java
-│   │                   │   │
-│   │                   │   ├── skiplist
-│   │                   │   │   ├── SkipList.java
-│   │                   │   │   ├── SkipListDemo.java
-│   │                   │   │   └── SkipListNode.java
-│   │                   │   │
-│   │                   │   └── unrolled
-│   │                   │       ├── UnrolledLinkedList.java
-│   │                   │       ├── UnrolledLinkedListDemo.java
-│   │                   │       └── UnrolledNode.java
-│   │                   │
 │   │                   ├── stack
 │   │                   ├── queue
 │   │                   ├── tree
-│   │                   ├── hashmap
-│   │                   ├── heap
-│   │                   └── graph
+│   │                   └── heap
 │   │
 │   └── test
 │       └── java
@@ -94,752 +341,209 @@ java-data-structures-lab
 │               └── emrebeys
 │                   └── datastructures
 │                       ├── array
-│                       │   └── DynamicArrayTest.java
-│                       │
-│                       └── linkedlist
-│                           ├── singly
-│                           │   └── LinkedListTest.java
-│                           │
-│                           ├── doubly
-│                           │   └── DoublyLinkedListTest.java
-│                           │
-│                           ├── circularsingly
-│                           │   └── CircularSinglyLinkedListTest.java
-│                           │
-│                           ├── circulardoubly
-│                           │   └── CircularDoublyLinkedListTest.java
-│                           │
-│                           ├── skiplist
-│                           │   └── SkipListTest.java
-│                           │
-│                           └── unrolled
-│                               └── UnrolledLinkedListTest.java
+│                       ├── linkedlist
+│                       ├── stack
+│                       ├── queue
+│                       ├── tree
+│                       └── heap
+│
+├── docs
+│   ├── 01-array.md
+│   ├── 02-Linked-list.md
+│   ├── 03-stack.md
+│   ├── 04-queue.md
+│   ├── 05-tree.md
+│   └── 06-heap.md
 │
 ├── pom.xml
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-# 📚 Implemented Data Structures
+# Algorithmic Approach
 
-| Data Structure | Status |
-|---|:---:|
-| Dynamic Array | ✅ |
-| Singly Linked List | ✅ |
-| Doubly Linked List | ✅ |
-| Circular Singly Linked List | ✅ |
-| Circular Doubly Linked List | ✅ |
-| Skip List | ✅ |
-| Unrolled Linked List | ✅ |
-| Stack | ✅ |
-| Queue | ✅ |
-| Circular Queue | ✅ |
-| Binary Search Tree | ⏳ |
-| AVL Tree | ⏳ |
-| Heap | ⏳ |
-| Hash Map | ⏳ |
-| Graph | ⏳ |
+The project avoids treating built-in Java collections as black boxes. Instead, the core logic behind each structure is implemented manually whenever appropriate.
+
+Example: AVL Tree insertion
+
+```text
+Insert
+   |
+   v
+BST Insert
+   |
+   v
+Height Update
+   |
+   v
+Balance Factor
+   |
+   v
+Rotation
+```
+
+Example: Heap insertion
+
+```text
+Insert
+   |
+   v
+Append to array
+   |
+   v
+heapifyUp
+```
+
+Example: Heap extraction
+
+```text
+Remove root
+   |
+   v
+Move last element to root
+   |
+   v
+heapifyDown
+```
+
+This approach is intended to make the internal behavior of each data structure easier to understand.
 
 ---
 
-# 🔗 Linked List Family
+# Testing Strategy
 
-Version **0.2.0** expands the project with six different Linked List implementations.
+JUnit tests are written for each data structure.
 
-```text
-Linked List Family
-│
-├── Singly Linked List
-│
-├── Doubly Linked List
-│
-├── Circular Singly Linked List
-│
-├── Circular Doubly Linked List
-│
-├── Skip List
-│
-└── Unrolled Linked List
-```
+The tests cover not only normal usage scenarios but also edge cases.
 
-The Linked List module demonstrates different approaches to node-based data organization.
+Example scenarios:
 
-Covered concepts include:
-
-- Single-direction traversal
-- Bidirectional traversal
-- Circular structures
-- Node references
-- Dynamic memory organization
-- Generic programming
-- Probabilistic multi-level searching
-- Block-based node storage
-- Node splitting
-- Boundary handling
-- Exception handling
-- Algorithm analysis
-
----
-
-# 1️⃣ Singly Linked List
-
-Singly Linked List is the simplest node-based linked data structure.
-
-Each node stores:
-
-```text
-Value
-Next
-```
-
-Example:
-
-```text
-HEAD
- │
- ▼
-[10] -> [20] -> [30] -> null
-```
-
-The structure supports traversal in a single direction.
-
-### Implemented Features
-
-- Add elements
-- Add first
-- Add last
-- Insert by index
-- Remove elements
-- Search
-- Access by index
-- Clear list
-- Size control
-- Empty list control
-
----
-
-# 2️⃣ Doubly Linked List
-
-Doubly Linked List stores references to both the previous and next nodes.
-
-```text
-null <- [10] <-> [20] <-> [30] -> null
-```
-
-Each node contains:
-
-```text
-Previous
-Value
-Next
-```
-
-This allows traversal in both directions.
-
-### Implemented Features
-
-- Forward traversal
-- Backward traversal
-- Add operations
-- Remove operations
-- Search operations
-- Index access
-- Head and tail management
-- Generic type support
-
----
-
-# 3️⃣ Circular Singly Linked List
-
-Circular Singly Linked List connects the last node back to the first node.
-
-```text
-      ┌─────────────────┐
-      │                 │
-      ▼                 │
-    [10] -> [20] -> [30]
-```
-
-Instead of:
-
-```text
-tail.next = null
-```
-
-the structure uses:
-
-```text
-tail.next = head
-```
-
-This structure is useful for cyclic processes such as:
-
-- Round-Robin scheduling
-- Turn-based systems
-- Circular buffers
-- Repeating task lists
-
----
-
-# 4️⃣ Circular Doubly Linked List
-
-Circular Doubly Linked List combines circular and doubly linked structures.
-
-```text
-      ┌─────────────────────────┐
-      │                         │
-      ▼                         │
-    [10] <-> [20] <-> [30]
-      ▲                         │
-      └─────────────────────────┘
-```
-
-The structure maintains:
-
-```text
-tail.next = head
-head.previous = tail
-```
-
-This allows bidirectional circular traversal.
-
----
-
-# 5️⃣ Skip List
-
-Skip List is a probabilistic data structure that improves search performance by creating multiple traversal levels.
-
-Example:
-
-```text
-Level 2: 10 ----------------------> 50
-           |                        |
-Level 1: 10 --------> 30 --------> 50
-           |           |            |
-Level 0: 10 -> 20 -> 30 -> 40 -> 50 -> 60
-```
-
-Higher levels allow the algorithm to skip multiple nodes during searching.
-
-Average search complexity:
-
-```text
-O(log n)
-```
-
-### Implemented Features
-
-- `add()`
-- `contains()`
-- `remove()`
-- `first()`
-- `last()`
-- `size()`
-- `currentLevel()`
-- `isEmpty()`
-- `clear()`
-
-Duplicate values are not allowed.
-
-Default configuration:
-
-```text
-Maximum Level = 16
-Probability   = 0.5
-```
-
----
-
-# 6️⃣ Unrolled Linked List
-
-Unrolled Linked List stores multiple elements inside each node instead of storing only one element.
-
-Traditional Linked List:
-
-```text
-[10] -> [20] -> [30] -> [40]
-```
-
-Unrolled Linked List:
-
-```text
-Node 1                  Node 2
-
-+----+----+             +----+----+
-| 10 | 20 | ----------> | 30 | 40 |
-+----+----+             +----+----+
-```
-
-This approach can reduce node overhead and improve cache locality.
-
-The default node capacity used in this project is:
-
-```text
-4
-```
-
-Example:
-
-```text
-Node Capacity = 4
-
-+----+----+----+----+
-| 10 | 20 | 30 | 40 |
-+----+----+----+----+
-```
-
-When more space is required, another node can be created.
-
-```text
-+----+----+----+----+       +----+----+----+----+
-| 10 | 20 | 30 | 40 | ----> | 50 |    |    |    |
-+----+----+----+----+       +----+----+----+----+
-```
-
-### Implemented Features
-
-- `add()`
-- `addFirst()`
-- `addLast()`
-- `add(index, element)`
-- `get()`
-- `set()`
-- `remove(index)`
-- `remove(element)`
-- `contains()`
-- `indexOf()`
-- `getFirst()`
-- `getLast()`
-- `clear()`
-- `size()`
-- `nodeCount()`
-- `nodeCapacity()`
-
----
-
-# 📊 Complexity Analysis
-
-Each implementation includes analysis of:
-
-- Time Complexity
-- Space Complexity
-- Advantages
-- Disadvantages
-- Real-world usage examples
-
-## Linked List Complexity Overview
-
-| Operation | Singly | Doubly | Circular | Skip List | Unrolled |
-|---|:---:|:---:|:---:|:---:|:---:|
-| Add First | O(1) | O(1) | O(1) | - | O(1)* |
-| Add Last | O(1)* | O(1)* | O(1)* | O(log n) Avg. | O(1)* |
-| Search | O(n) | O(n) | O(n) | O(log n) Avg. | O(n) |
-| Index Access | O(n) | O(n) | O(n) | - | O(n) |
-| Remove | O(n) | O(n) | O(n) | O(log n) Avg. | O(n) |
-| Space | O(n) | O(n) | O(n) | O(n) | O(n) |
-
-> `*` Complexity can depend on implementation details such as tail references, node capacity and node splitting.
-
-Detailed analyses are available inside the `docs/` directory.
-
----
-
-# 📦 Space Complexity
-
-The general space complexity of the Linked List family is:
-
-```text
-O(n)
-```
-
-However, memory overhead differs between implementations.
-
-### Singly Linked List
-
-```text
-Value + Next
-```
-
-### Doubly Linked List
-
-```text
-Previous + Value + Next
-```
-
-### Skip List
-
-Skip List nodes may contain multiple forward references.
-
-### Unrolled Linked List
-
-Unrolled Linked List reduces node count by storing multiple elements inside each node.
-
----
-
-# 🧪 Unit Tests
-
-Every data structure is tested using **JUnit 5**.
-
-Tests include scenarios such as:
-
-- Empty structure behavior
-- Add element
-- Add first
-- Add last
-- Insert by index
-- Remove element
-- Remove by index
-- Update element
-- Search element
-- Contains
-- IndexOf
+- Empty structure
+- Single element
+- Multiple elements
+- Duplicate values
+- Negative values
+- Invalid operations
+- Delete edge cases
 - Clear
-- Boundary conditions
-- Invalid index handling
-- Exception handling
-- Duplicate handling
-- Generic type support
-- Large dataset operations
+- Size validation
+- Tree rotations
+- Tree rebalancing
+- Heap ordering
 
 ---
 
-## 🔍 Skip List Tests
+# Time Complexity Examples
 
-The Skip List implementation contains a comprehensive JUnit test suite.
+| Data Structure | Operation | Complexity |
+|---|---|---:|
+| BST | Average Search | O(log n) |
+| BST | Worst Case Search | O(n) |
+| AVL | Search | O(log n) |
+| AVL | Insert | O(log n) |
+| AVL | Delete | O(log n) |
+| Heap | Peek | O(1) |
+| Heap | Insert | O(log n) |
+| Heap | Extract | O(log n) |
+| Heap | Contains | O(n) |
+
+---
+
+# Roadmap
+
+Completed sections:
 
 ```text
-31 tests passed
+Array        ✅
+Linked List  ✅
+Stack        ✅
+Queue        ✅
+Tree         ✅
+Heap         ✅
 ```
 
-Covered scenarios include:
-
-- Add
-- Search
-- Remove
-- Duplicate handling
-- First element
-- Last element
-- Empty list behavior
-- Level generation
-- Level boundaries
-- Comparator behavior
-- Reverse comparator
-- Constructor validation
-- Null value validation
-- Invalid probability
-- Invalid maximum level
-- Large dataset operations
-
----
-
-## 📦 Unrolled Linked List Tests
-
-The Unrolled Linked List implementation also contains a comprehensive JUnit test suite.
+Upcoming sections:
 
 ```text
-40 tests passed
+Hash Map     ⏳
+Graph        ⏳
 ```
 
-Covered scenarios include:
-
-- Add element
-- Add first
-- Add last
-- Add by index
-- Remove by index
-- Remove by value
-- Get
-- Set
-- Contains
-- IndexOf
-- First element
-- Last element
-- Node capacity
-- Node creation
-- Node splitting
-- Head splitting
-- Empty node removal
-- Clear
-- Null elements
-- Duplicate elements
-- Invalid indexes
-- Boundary conditions
-- Large dataset operations
+After the main data structure implementations are completed, the visualization layer will be expanded further.
 
 ---
 
-# ▶️ Demo Applications
+# Learning Outcomes
 
-Each Linked List implementation contains its own console demo.
+Throughout the project, the following topics are practiced:
 
-```text
-linkedlist
-│
-├── singly
-│   └── LinkedListDemo.java
-│
-├── doubly
-│   └── DoublyLinkedListDemo.java
-│
-├── circularsingly
-│   └── CircularSinglyLinkedListDemo.java
-│
-├── circulardoubly
-│   └── CircularDoublyLinkedListDemo.java
-│
-├── skiplist
-│   └── SkipListDemo.java
-│
-└── unrolled
-    └── UnrolledLinkedListDemo.java
-```
-
-Demo applications show how each data structure behaves internally during runtime.
+- Java OOP
+- Data structure design
+- Array management
+- Node-based structures
+- Recursive algorithms
+- Tree traversal
+- Binary Search Trees
+- Self-balancing trees
+- AVL rotations
+- Complete Binary Trees
+- Heap algorithms
+- Time complexity analysis
+- Edge-case analysis
+- Unit testing
+- Maven project management
+- Git and GitHub workflow
 
 ---
 
-# 📖 Documentation
+# Documentation
 
-Every major data structure has its own detailed documentation inside the **docs/** directory.
+Each main data structure is documented in a separate Markdown file.
 
 ```text
 docs/
-│
 ├── 01-array.md
-├── 02-linked-list.md
+├── 02-Linked-list.md
 ├── 03-stack.md
 ├── 04-queue.md
 ├── 05-tree.md
-├── 06-heap.md
-├── 07-hash-map.md
-└── 08-graph.md
+└── 06-heap.md
 ```
 
-Currently completed:
+These files include:
 
-- ✅ `01-array.md`
-- ✅ `02-linked-list.md`
-
-Upcoming:
-
-- ⏳ `03-stack.md`
-- ⏳ `04-queue.md`
-- ⏳ `05-tree.md`
-- ⏳ `06-heap.md`
-- ⏳ `07-hash-map.md`
-- ⏳ `08-graph.md`
+- How each data structure works
+- Core algorithms
+- Example structures
+- Implemented methods
+- Time complexities
+- Demo scenarios
+- Test coverage
 
 ---
 
-# 🎯 Project Goals
+# Next Goal
 
-The main goals of this project are:
-
-- Learn data structures from scratch
-- Understand how common data structures work internally
-- Improve Java programming skills
-- Practice Generic Programming
-- Practice Object-Oriented Programming
-- Understand memory and reference management
-- Practice algorithm analysis
-- Understand Big-O notation
-- Build comprehensive JUnit test suites
-- Practice Clean Code principles
-- Build reusable implementations
-- Build a professional GitHub portfolio project
-
----
-
-# 📌 Roadmap
-
-## Version 0.1.0 — Array
-
-- [x] Dynamic Array
-- [x] Array Demo
-- [x] Unit Tests
-- [x] Documentation
-
-**Status:** Completed ✅
-
----
-
-## Version 0.2.0 — Linked List Family
-
-- [x] Singly Linked List
-- [x] Doubly Linked List
-- [x] Circular Singly Linked List
-- [x] Circular Doubly Linked List
-- [x] Skip List
-- [x] Unrolled Linked List
-- [x] Demo Applications
-- [x] JUnit Tests
-- [x] Documentation
-
-**Status:** Completed ✅
-
----
-
-## Version 0.3.0 — Stack & Queue
-
-- [x] Stack
-- [x] Stack Demo
-- [x] Stack Unit Tests
-- [x] Queue
-- [x] Circular Queue
-- [x] Queue Demo
-- [x] Circular Queue Demo
-- [x] Queue Unit Tests
-- [x] Circular Queue Unit Tests
-- [x] Documentation
-
-**Status:** Completed ✅
-Currently completed:
-
-**Array Module:** Completed ✅  
-**Linked List Family:** Completed ✅  
-**Stack Module:** Completed ✅  
-**Queue Family:** Completed ✅  
-**Next Module:** Trees ⏳
----
-
-## Version 0.4.0 — Trees
-
-- [ ] Binary Search Tree
-- [ ] AVL Tree
-- [ ] Tree Traversal Algorithms
-- [ ] Demo Applications
-- [ ] Unit Tests
-- [ ] Documentation
-
-**Status:** Planned ⏳
-
----
-
-## Version 0.5.0 — Advanced Structures
-
-- [ ] Heap
-- [ ] Hash Map
-- [ ] Graph
-- [ ] Demo Applications
-- [ ] Unit Tests
-- [ ] Documentation
-
-**Status:** Planned ⏳
-
----
-
-## Version 1.0.0
-
-- [ ] Complete Data Structures Library
-- [ ] Full Documentation
-- [ ] Full Unit Test Suite
-- [ ] Complexity Analysis
-- [ ] Demo Applications
-- [ ] GitHub Release
-
----
-
-# 📈 Current Progress
+The next section is:
 
 ```text
-Java Data Structures Lab
-
-Array
-└── Dynamic Array                     ✅
-
-Linked List
-├── Singly Linked List                ✅
-├── Doubly Linked List                ✅
-├── Circular Singly Linked List       ✅
-├── Circular Doubly Linked List       ✅
-├── Skip List                         ✅
-└── Unrolled Linked List              ✅
-
-Stack                                   ✅
-Queue                                   ✅
-Tree                                    ⏳
-Heap                                    ⏳
-Hash Map                                ⏳
-Graph                                   ⏳
+07 - Hash Map
 ```
 
-Current development version:
+After that:
 
 ```text
-Version 0.3.0
+08 - Graph
 ```
 
----
-
-# 🎓 Learning Outcomes
-
-This project currently demonstrates practical implementation of:
-
-- Arrays
-- Dynamic resizing
-- Node-based data structures
-- Singly linked structures
-- Doubly linked structures
-- Circular structures
-- Probabilistic data structures
-- Multi-level searching
-- Block-based linked structures
-- Node splitting
-- Generic programming
-- Reference management
-- Algorithm analysis
-- Time complexity
-- Space complexity
-- JUnit 5 testing
-- Boundary testing
-- Exception handling
-- Clean Code principles
+Once these are completed, the core data structure implementation phase of the project will be finished.
 
 ---
 
-# ✅ Current Status
-
-### Array Family
-
-- DynamicArray Implementation ✔️
-- DynamicArray Tests ✔️
-- Array Documentation ✔️
-
-### Linked List Family
-
-- Singly Linked List ✔️
-- Doubly Linked List ✔️
-- Circular Singly Linked List ✔️
-- Circular Doubly Linked List ✔️
-- Skip List ✔️
-- Unrolled Linked List ✔️
-- Demo Applications ✔️
-- JUnit Tests ✔️
-- Documentation ✔️
-
----
-
-# 🏷️ Version
-
-**Current Version:** `0.2.0`
-
-**Array Module:** Completed ✅  
-**Linked List Family:** Completed ✅  
-**Next Module:** Stack & Queue ⏳
-
----
-
-# 👨‍💻 Author
+## Author
 
 **Yunus Emre KUL**
 
-Computer Engineering Student
-
-Java • Data Structures • Algorithms
-
----
-
-## ⭐ Support
-
-If you find this project useful, consider giving it a ⭐ on GitHub.
+GitHub: `EmreBEYS`
