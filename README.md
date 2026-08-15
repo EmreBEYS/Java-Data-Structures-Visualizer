@@ -1,549 +1,502 @@
 # Java Data Structures Visualizer
 
-An educational project focused on implementing, testing, and documenting fundamental and advanced data structures from scratch in Java.
+A Java-based educational project that implements fundamental and advanced data structures from scratch.
 
-Instead of only relying on the Java Collections Framework, this project aims to explore the **internal logic**, algorithms, and time complexities behind common data structures through hands-on implementations.
+The main goal of this project is to understand how commonly used data structures work internally instead of relying only on Java Collection Framework implementations.
 
----
+Each data structure includes:
 
-## Project Goals
-
-- Implement data structures from scratch
-- Understand how core algorithms work internally
-- Improve Java and OOP skills
-- Write automated tests with JUnit
-- Validate edge-case scenarios
-- Strengthen algorithmic thinking
-- Document each data structure clearly
-- Expand the project with a visualization layer in later stages
+* Clean Java implementation
+* Generic type support
+* Demonstration classes
+* JUnit 5 tests
+* Edge-case coverage
+* Technical documentation
+* Practical usage examples
 
 ---
 
-## Technologies Used
+## Project Status
 
-```text
-Java 21
-Maven
-JUnit 5
-IntelliJ IDEA
-Git
-GitHub
-```
+**Completed**
+
+The core data structures planned for this project have been implemented and tested successfully.
 
 ---
 
-# Project Status
+## Implemented Data Structures
 
-| Section | Data Structure | Status |
-|---|---|---|
-| 01 | Array | ✅ Completed |
-| 02 | Linked List Family | ✅ Completed |
-| 03 | Stack | ✅ Completed |
-| 04 | Queue | ✅ Completed |
-| 05 | Tree | ✅ Completed |
-| 06 | Heap | ✅ Completed |
-| 07 | Hash Map | ⏳ Next |
-| 08 | Graph | ⏳ Planned |
+### 01 — Dynamic Array
 
----
+Custom dynamic array implementation with automatic capacity management.
 
-# Implemented Data Structures
+Features:
 
-## 01 - Array
+* Generic type support
+* Automatic resizing
+* Add
+* Get
+* Set
+* Remove
+* Search
+* Clear
+* Size and capacity management
 
-A dynamic array implementation was developed from scratch.
+Documentation:
 
-```text
-Array
-└── Dynamic Array
-```
-
-Main topics:
-
-- Dynamic capacity
-- Automatic resizing
-- Insert
-- Remove
-- Get / Set
-- Search
-- Size management
-
-Detailed documentation:
-
-```text
-docs/01-array.md
-```
+`docs/01-array.md`
 
 ---
 
-## 02 - Linked List Family
+### 02 — Linked List Family
 
-Different types of linked lists were implemented.
-
-```text
-Linked List
-├── Singly Linked List
-├── Doubly Linked List
-├── Circular Singly Linked List
-├── Circular Doubly Linked List
-├── Skip List
-└── Unrolled Linked List
-```
-
-This section covers:
-
-- Node-based data organization
-- Forward and backward links
-- Circular references
-- Skip-level logic
-- Block-based linked list design
-- Insert / remove / search
-- Traversal
-
-Detailed documentation:
-
-```text
-docs/02-Linked-list.md
-```
-
----
-
-## 03 - Stack
-
-A Stack data structure based on the LIFO principle was implemented.
-
-```text
-Last In
-First Out
-```
-
-Main operations:
-
-```text
-push
-pop
-peek
-size
-isEmpty
-clear
-```
-
-The implementation was verified with demo scenarios and JUnit tests.
-
-Detailed documentation:
-
-```text
-docs/03-stack.md
-```
-
----
-
-## 04 - Queue
-
-Queue structures based on the FIFO principle were implemented.
-
-```text
-First In
-First Out
-```
+Multiple linked-list implementations were developed to demonstrate different node-linking strategies.
 
 Implemented structures:
 
-```text
-Queue
-├── Queue
-└── Circular Queue
-```
+* Singly Linked List
+* Doubly Linked List
+* Circular Singly Linked List
+* Circular Doubly Linked List
+* Skip List
+* Unrolled Linked List
 
-Main topics:
+Features include:
 
-- Enqueue
-- Dequeue
-- Peek
-- Circular indexing
-- Overflow / underflow checks
-- Size management
+* Insertion
+* Removal
+* Search
+* Traversal
+* Indexed operations
+* Circular traversal
+* Multi-level search structures
 
-Detailed documentation:
+Documentation:
 
-```text
-docs/04-queue.md
-```
-
----
-
-## 05 - Tree
-
-The Tree section contains two important search tree implementations.
-
-```text
-Tree
-├── Binary Search Tree
-└── AVL Tree
-```
-
-### Binary Search Tree
-
-Implemented features:
-
-- Insert
-- Search
-- Delete
-- Minimum
-- Maximum
-- Inorder Traversal
-- Preorder Traversal
-- Postorder Traversal
-- Duplicate prevention
-- Clear
-
-JUnit tests:
-
-```text
-16 Tests
-```
-
-### AVL Tree
-
-The AVL Tree implementation introduces self-balancing tree behavior.
-
-```text
-AVL Tree
-├── Height
-├── Balance Factor
-├── LL Rotation
-├── RR Rotation
-├── LR Rotation
-└── RL Rotation
-```
-
-Additional features:
-
-- Rebalancing after insertion
-- Rebalancing after deletion
-- Search
-- Min / Max
-- Traversal
-- Height validation
-
-JUnit tests:
-
-```text
-23 Tests
-```
-
-Total Tree tests:
-
-```text
-39 Tests
-```
-
-Detailed documentation:
-
-```text
-docs/05-tree.md
-```
+`docs/02-linked-list.md`
 
 ---
 
-## 06 - Heap
+### 03 — Stack
 
-The Heap section includes Min Heap and Max Heap implementations.
+LIFO-based stack implementation.
 
-```text
-Heap
-├── Min Heap
-└── Max Heap
-```
+Features:
 
-### Min Heap
+* Push
+* Pop
+* Peek
+* Size
+* Clear
+* Empty-state validation
+* Generic element support
 
-Rule:
+Documentation:
 
-```text
-Parent <= Children
-```
-
-Main operations:
-
-- Insert
-- Peek
-- Extract Min
-- Heapify Up
-- Heapify Down
-- Contains
-- Clear
-
-### Max Heap
-
-Rule:
-
-```text
-Parent >= Children
-```
-
-Main operations:
-
-- Insert
-- Peek
-- Extract Max
-- Heapify Up
-- Heapify Down
-- Contains
-- Clear
-
-The heap implementations are based on `ArrayList<Integer>`.
-
-Index relationships:
-
-```text
-Parent      = (index - 1) / 2
-Left Child  = (2 * index) + 1
-Right Child = (2 * index) + 2
-```
-
-JUnit test classes:
-
-```text
-MinHeapTest -> 13 Tests
-MaxHeapTest -> 13 Tests
-```
-
-Detailed documentation:
-
-```text
-docs/06-heap.md
-```
+`docs/03-stack.md`
 
 ---
 
-# Project Structure
+### 04 — Queue
+
+FIFO-based queue implementations.
+
+Implemented structures:
+
+* Queue
+* Circular Queue
+
+Features:
+
+* Enqueue
+* Dequeue
+* Peek
+* Circular index management
+* Capacity control
+* Empty/full state validation
+
+Documentation:
+
+`docs/04-queue.md`
+
+---
+
+### 05 — Tree
+
+Tree-based data structures for hierarchical storage and ordered searching.
+
+Implemented structures:
+
+* Binary Search Tree
+* AVL Tree
+
+Features:
+
+* Insert
+* Search
+* Delete
+* Minimum / Maximum
+* Tree height
+* Traversals
+
+    * Inorder
+    * Preorder
+    * Postorder
+* AVL balancing
+* Left rotation
+* Right rotation
+* Double rotations
+
+Documentation:
+
+`docs/05-tree.md`
+
+---
+
+### 06 — Heap
+
+Binary heap implementations.
+
+Implemented structures:
+
+* Min Heap
+* Max Heap
+
+Features:
+
+* Insert
+* Peek
+* Extract
+* Heapify
+* Parent/child index management
+* Dynamic heap operations
+
+Documentation:
+
+`docs/06-heap.md`
+
+---
+
+### 07 — Hash Map
+
+Custom hash table implementation using **Separate Chaining**.
+
+Features:
+
+* Generic key/value support
+* `put()`
+* `get()`
+* `remove()`
+* `containsKey()`
+* `containsValue()`
+* Collision handling
+* Automatic resizing
+* Load factor management
+* Null key support
+* Null value support
+* Custom initial capacity
+* Clear operation
+
+Collision resolution is implemented using linked nodes inside each bucket.
+
+Documentation:
+
+`docs/07-hash-map.md`
+
+---
+
+### 08 — Graph
+
+Adjacency-list-based graph implementation.
+
+Supported graph types:
+
+* Directed Graph
+* Undirected Graph
+
+Features:
+
+* Vertex insertion
+* Vertex removal
+* Edge insertion
+* Edge removal
+* Weighted edges
+* Self-loops
+* Neighbor retrieval
+* Vertex count
+* Edge count
+* Breadth-First Search
+* Depth-First Search
+* Cycle-safe traversal
+* Disconnected graph handling
+
+Traversal algorithms:
+
+* BFS — Breadth-First Search
+* DFS — Depth-First Search
+
+Documentation:
+
+`docs/08-graph.md`
+
+---
+
+## Project Structure
 
 ```text
-Java-Data-Structures-Visualizer
+Java-Data-Structures-Visualizer/
 │
-├── src
-│   ├── main
-│   │   └── java
-│   │       └── com
-│   │           └── emrebeys
-│   │               └── datastructures
-│   │                   ├── array
-│   │                   ├── linkedlist
-│   │                   ├── stack
-│   │                   ├── queue
-│   │                   ├── tree
-│   │                   └── heap
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       ├── array/
+│   │       ├── linkedlist/
+│   │       ├── stack/
+│   │       ├── queue/
+│   │       ├── tree/
+│   │       ├── heap/
+│   │       ├── hashmap/
+│   │       └── graph/
 │   │
-│   └── test
-│       └── java
-│           └── com
-│               └── emrebeys
-│                   └── datastructures
-│                       ├── array
-│                       ├── linkedlist
-│                       ├── stack
-│                       ├── queue
-│                       ├── tree
-│                       └── heap
+│   └── test/
+│       └── java/
+│           ├── array/
+│           ├── linkedlist/
+│           ├── stack/
+│           ├── queue/
+│           ├── tree/
+│           ├── heap/
+│           ├── hashmap/
+│           └── graph/
 │
-├── docs
+├── docs/
 │   ├── 01-array.md
-│   ├── 02-Linked-list.md
+│   ├── 02-linked-list.md
 │   ├── 03-stack.md
 │   ├── 04-queue.md
 │   ├── 05-tree.md
-│   └── 06-heap.md
+│   ├── 06-heap.md
+│   ├── 07-hash-map.md
+│   └── 08-graph.md
 │
 ├── pom.xml
-├── README.md
-└── LICENSE
+├── .gitignore
+└── README.md
 ```
 
 ---
 
-# Algorithmic Approach
+## Technologies
 
-The project avoids treating built-in Java collections as black boxes. Instead, the core logic behind each structure is implemented manually whenever appropriate.
-
-Example: AVL Tree insertion
-
-```text
-Insert
-   |
-   v
-BST Insert
-   |
-   v
-Height Update
-   |
-   v
-Balance Factor
-   |
-   v
-Rotation
-```
-
-Example: Heap insertion
-
-```text
-Insert
-   |
-   v
-Append to array
-   |
-   v
-heapifyUp
-```
-
-Example: Heap extraction
-
-```text
-Remove root
-   |
-   v
-Move last element to root
-   |
-   v
-heapifyDown
-```
-
-This approach is intended to make the internal behavior of each data structure easier to understand.
+* Java
+* JDK 21
+* Maven
+* JUnit 5
+* IntelliJ IDEA
+* Git
+* GitHub
 
 ---
 
-# Testing Strategy
+## Testing
 
-JUnit tests are written for each data structure.
+The project contains dedicated JUnit tests for each implemented data structure.
 
-The tests cover not only normal usage scenarios but also edge cases.
+Tests cover:
 
-Example scenarios:
+* Normal operations
+* Boundary conditions
+* Empty structures
+* Duplicate values
+* Invalid operations
+* Resizing
+* Collision handling
+* Tree balancing
+* Graph cycles
+* Directed and undirected graph behavior
+* Null handling where supported
 
-- Empty structure
-- Single element
-- Multiple elements
-- Duplicate values
-- Negative values
-- Invalid operations
-- Delete edge cases
-- Clear
-- Size validation
-- Tree rotations
-- Tree rebalancing
-- Heap ordering
+Recent implementations include:
 
----
-
-# Time Complexity Examples
-
-| Data Structure | Operation | Complexity |
-|---|---|---:|
-| BST | Average Search | O(log n) |
-| BST | Worst Case Search | O(n) |
-| AVL | Search | O(log n) |
-| AVL | Insert | O(log n) |
-| AVL | Delete | O(log n) |
-| Heap | Peek | O(1) |
-| Heap | Insert | O(log n) |
-| Heap | Extract | O(log n) |
-| Heap | Contains | O(n) |
+* Hash Map — **24 passing tests**
+* Graph — **33 passing tests**
 
 ---
 
-# Roadmap
+## Hash Map Architecture
 
-Completed sections:
+The custom Hash Map uses an array of buckets.
+
+Each bucket can contain multiple nodes when different keys produce the same bucket index.
 
 ```text
-Array        ✅
-Linked List  ✅
-Stack        ✅
-Queue        ✅
-Tree         ✅
-Heap         ✅
+Bucket Array
+
+[0] -> null
+
+[1] -> Node(A)
+          |
+          v
+       Node(B)
+          |
+          v
+       Node(C)
+
+[2] -> Node(D)
+
+[3] -> null
 ```
 
-Upcoming sections:
+This technique is known as:
 
-```text
-Hash Map     ⏳
-Graph        ⏳
-```
+**Separate Chaining**
 
-After the main data structure implementations are completed, the visualization layer will be expanded further.
+When the configured load factor is exceeded, the bucket array is resized and existing entries are redistributed.
 
 ---
 
-# Learning Outcomes
+## Graph Architecture
 
-Throughout the project, the following topics are practiced:
+The Graph implementation uses an adjacency list.
 
-- Java OOP
-- Data structure design
-- Array management
-- Node-based structures
-- Recursive algorithms
-- Tree traversal
-- Binary Search Trees
-- Self-balancing trees
-- AVL rotations
-- Complete Binary Trees
-- Heap algorithms
-- Time complexity analysis
-- Edge-case analysis
-- Unit testing
-- Maven project management
-- Git and GitHub workflow
+Example:
+
+```text
+A -> B, C
+B -> A, D
+C -> A, D
+D -> B, C, E
+E -> D
+```
+
+Conceptually:
+
+```text
+A ----- B
+|       |
+|       |
+C ----- D ----- E
+```
+
+The same graph structure can operate as either:
+
+```text
+DIRECTED
+```
+
+or:
+
+```text
+UNDIRECTED
+```
 
 ---
 
-# Documentation
+## BFS
 
-Each main data structure is documented in a separate Markdown file.
+Breadth-First Search explores vertices level by level.
+
+Example:
 
 ```text
-docs/
-├── 01-array.md
-├── 02-Linked-list.md
-├── 03-stack.md
-├── 04-queue.md
-├── 05-tree.md
-└── 06-heap.md
+A -> B -> C -> D -> E
 ```
 
-These files include:
+Main structures used internally:
 
-- How each data structure works
-- Core algorithms
-- Example structures
-- Implemented methods
-- Time complexities
-- Demo scenarios
-- Test coverage
+* Queue
+* Visited Set
+
+Typical complexity:
+
+```text
+O(V + E)
+```
 
 ---
 
-# Next Goal
+## DFS
 
-The next section is:
+Depth-First Search explores one branch as deeply as possible before backtracking.
 
-```text
-07 - Hash Map
-```
-
-After that:
+Example traversal:
 
 ```text
-08 - Graph
+A -> B -> D -> C -> E
 ```
 
-Once these are completed, the core data structure implementation phase of the project will be finished.
+The implementation uses recursive traversal and a visited set.
+
+Typical complexity:
+
+```text
+O(V + E)
+```
 
 ---
 
-## Author
+## Learning Objectives
 
-**Yunus Emre KUL**
+This project was created to strengthen understanding of:
 
-GitHub: `EmreBEYS`
+* Memory-oriented data structure design
+* Generic Java programming
+* Algorithm implementation
+* Node-based structures
+* Dynamic resizing
+* Collision resolution
+* Recursive algorithms
+* Tree balancing
+* Graph modeling
+* BFS and DFS
+* Unit testing
+* Object-oriented design
+* Clean project architecture
+
+---
+
+## Running the Project
+
+Clone the repository:
+
+```bash
+git clone https://github.com/EmreBEYS/Java-Data-Structures-Visualizer.git
+```
+
+Enter the project directory:
+
+```bash
+cd Java-Data-Structures-Visualizer
+```
+
+Run the test suite:
+
+```bash
+mvn test
+```
+
+Or open the project with IntelliJ IDEA and run individual demo or test classes.
+
+---
+
+## Repository
+
+GitHub:
+
+`EmreBEYS/Java-Data-Structures-Visualizer`
+
+---
+
+## License
+
+This project is intended primarily for educational and portfolio purposes.
+
+---
+
+## Final Notes
+
+Java Data Structures Visualizer demonstrates the internal implementation of several fundamental computer science data structures without depending on Java's built-in collection implementations for the core algorithms.
+
+The project covers structures ranging from dynamic arrays and linked lists to balanced trees, hash tables and graphs, with dedicated tests and documentation for each major module.
+
+**Project Status: Completed**
